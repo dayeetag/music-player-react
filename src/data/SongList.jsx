@@ -5,7 +5,7 @@ const SongList = [
         artist: "Roger Gabaldà",
         desc: "Hopeful Emotional Music by Roger Gabaldà, featuring strings and woodwinds.",
         albumart: 'albumart/thetriumphoflife.webp',
-        src: '/songs/thetriumphoflife.mp3'
+        src: 'songs/thetriumphoflife.mp3'
     },
     {
         id: 2,
@@ -13,7 +13,7 @@ const SongList = [
         artist: "Marcus P",
         desc: "Shiny Uplifting Music featuring groovy piano, drums, percussion, electric guitar and bass.",
         albumart: 'albumart/sweetandfunky.webp',
-        src: '/songs/sweetandfunky.mp3'
+        src: 'songs/sweetandfunky.mp3'
     },
     {
         id: 3,
