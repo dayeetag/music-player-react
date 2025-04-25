@@ -21,7 +21,7 @@ const SongList = [
         artist: "Tungsten Stars",
         desc: "Emotional Gentle Music, featuring piano, synth, strings and percussion.",
         albumart: 'albumart/theuniversesembrace.webp',
-        src: '/songs/theuniversesembrace.mp3'
+        src: 'songs/theuniversesembrace.mp3'
     },
     {
         id: 4,
@@ -29,7 +29,7 @@ const SongList = [
         artist: "Roger Gabaldà",
         desc: "Reflective Cinematic Music, featuring piano, strings and synth.",
         albumart: 'albumart/north.webp',
-        src: '/songs/north.mp3'
+        src: 'songs/north.mp3'
     },
     {
         id: 5,
@@ -37,7 +37,7 @@ const SongList = [
         artist: "Aventure",
         desc: "Shiny Retro Music, featuring soft piano, synth and drums.",
         albumart: 'albumart/orangeclouds.webp',
-        src: '/songs/orangeclouds.mp3'
+        src: 'songs/orangeclouds.mp3'
     },
     {
         id: 6,
@@ -45,7 +45,7 @@ const SongList = [
         artist: "Roger Gabaldà",
         desc: "Hopeful Shiny Music, featuring piano, strings and soft synths.",
         albumart: 'albumart/curiouschild.webp',
-        src: '/songs/curiouschild.mp3'
+        src: 'songs/curiouschild.mp3'
     },
     {
         id: 7,
@@ -53,7 +53,7 @@ const SongList = [
         artist: "Veace D",
         desc: "Dramatic Music, featuring piano, strings, and a cello solo.",
         albumart: 'albumart/lostinthehaze.webp',
-        src: '/songs/lostinthehaze.mp3'
+        src: 'songs/lostinthehaze.mp3'
     },
     {
         id: 8,
@@ -61,7 +61,7 @@ const SongList = [
         artist: "Neptune",
         desc: "Chill Music",
         albumart: 'albumart/sunwave.webp',
-        src: '/songs/sunwave.mp3'
+        src: 'songs/sunwave.mp3'
     },
     {
         id: 9,
@@ -69,7 +69,7 @@ const SongList = [
         artist: "Nick Petrov",
         desc: "Inspiring Positive Music featuring electric guitars, piano, claps and beats.",
         albumart: 'albumart/brighterthanever.webp',
-        src: '/songs/brighterthanever.mp3'
+        src: 'songs/brighterthanever.mp3'
     },
     {
         id: 10,
@@ -77,7 +77,7 @@ const SongList = [
         artist: "Sonobringer",
         desc: "Dramatic Epic Music, featuring piano, strings and synth layers.",
         albumart: 'albumart/stellarcatharsis.webp',
-        src: '/songs/stellarcatharsis.mp3'
+        src: 'songs/stellarcatharsis.mp3'
     },
     {
         id: 11,
@@ -85,7 +85,7 @@ const SongList = [
         artist: "Sasha Louis Leger",
         desc: "Pizzicato Action Music, featuring backing vocals, strings and piano.",
         albumart: 'albumart/bowandarrow.webp',
-        src: '/songs/bowandarrow.mp3'
+        src: 'songs/bowandarrow.mp3'
     }
 ];
 
