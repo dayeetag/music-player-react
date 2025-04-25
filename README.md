@@ -16,3 +16,5 @@
 * Install Node.js
 * Open the project directory in command prompt and execute the command 'npm install'
 * Execute the command 'npm run dev' and open the link in any browser
+
+**TRY IT OUT:** https://dayeetag.github.io/music-player-react/
