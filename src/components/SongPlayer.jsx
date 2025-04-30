@@ -58,7 +58,7 @@ export default function SongPlayer({ currentSong, playlists, setPlaylists, activ
                         <p>Select a song to play!</p>
                     </div>
                     :
-                    <div className="w-full h-full flex flex-col justify-around items-center px-32 py-16">
+                    <div className="w-full h-full flex flex-col justify-around items-center text-center px-32 py-16">
                         <img src={currentSong.albumart ? currentSong.albumart : ""} className="w-1/4 rounded-lg" />
                         <p className="font-bold text-2xl">{currentSong.title ? currentSong.title : ""}</p>
                         <p className="font-semibold text-lg">{currentSong.artist ? currentSong.artist : ""}</p>

@@ -3,7 +3,7 @@ import SongList from "../data/SongList"
 export default function AllSongs({ currentSong, setCurrentSong }) {
 
     return (
-        <div className="h-full rounded-t-lg bg-zinc-950">
+        <div className="h-full max-h-full rounded-t-lg bg-zinc-950 overflow-auto scrollbar scrollbar-thumb-pink-950 scrollbar-track-gray-950 ">
             {
                 SongList.map(s => {
                     return (
