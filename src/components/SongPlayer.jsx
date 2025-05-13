@@ -6,6 +6,7 @@ export default function SongPlayer({ currentSong, playlists, setPlaylists, activ
     const [showModal, setShowModal] = useState(false);
     const [newPlaylistName, setNewPlaylistName] = useState("")
     const [selectedPlaylistOption, setSelectedPlaylistOption] = useState("");
+    const [pNameError, setPNameError] = useState(false)
 
     const audioRef = useRef(null)
 
@@ -22,6 +23,11 @@ export default function SongPlayer({ currentSong, playlists, setPlaylists, activ
 
     const handleSave = () => {
         if (newPlaylistName !== "") {
+            const exists = playlists.some(item => item.name === newPlaylistName);
+            if (exists) {
+                setPNameError(true)
+                return
+            }
             setPlaylists(prevData =>
                 [...prevData, { name: newPlaylistName, songs: [{ id: uuidv4(), songInfo: currentSong }] }]
             )
@@ -47,6 +53,7 @@ export default function SongPlayer({ currentSong, playlists, setPlaylists, activ
         }
         setNewPlaylistName("")
         setSelectedPlaylistOption("")
+        setPNameError(false)
         setShowModal(false);
     };
 
@@ -58,12 +65,12 @@ export default function SongPlayer({ currentSong, playlists, setPlaylists, activ
                         <p>Select a song to play!</p>
                     </div>
                     :
-                    <div className="w-full h-full flex flex-col justify-around items-center text-center px-32 py-16">
+                    <div className="w-full h-full flex flex-col justify-around items-center text-center px-8 py-8 md:py-16 md:px-32">
                         <img src={currentSong.albumart ? currentSong.albumart : ""} className="w-1/4 rounded-lg" />
                         <p className="font-bold text-2xl">{currentSong.title ? currentSong.title : ""}</p>
                         <p className="font-semibold text-lg">{currentSong.artist ? currentSong.artist : ""}</p>
                         <p className="text-md">{currentSong.desc ? currentSong.desc : ""}</p>
-                        <audio ref={audioRef} controls autoPlay className="w-3/5">
+                        <audio ref={audioRef} controls autoPlay className="md:w-3/5">
                             <source src={currentSong.src ? currentSong.src : null} type="audio/mp3" />
                         </audio>
                         <button
@@ -79,6 +86,12 @@ export default function SongPlayer({ currentSong, playlists, setPlaylists, activ
                                         <input type="text" placeholder="Enter playlist name" className="input input-bordered w-full bg-white text-black placeholder:text-black"
                                             onChange={(e) => setNewPlaylistName(e.target.value)}
                                         />
+                                        {
+                                            pNameError &&
+                                            <div className="alert alert-error p-4 my-2">
+                                                <span className="font-bold">Playlist name already exists!</span>
+                                            </div>
+                                        }
                                     </div>
 
                                     {playlists.length > 0 && (
@@ -108,7 +121,7 @@ export default function SongPlayer({ currentSong, playlists, setPlaylists, activ
                                         <button className="btn btn-success" onClick={handleSave}>
                                             Save
                                         </button>
-                                        <button className="btn" onClick={() => setShowModal(false)}>
+                                        <button className="btn" onClick={() => {setShowModal(false); setPNameError(false);setNewPlaylistName("");setSelectedPlaylistOption("");}}>
                                             Close
                                         </button>
                                     </div>

@@ -55,7 +55,7 @@ export default function Playlists({ playlists, setPlaylists, activePlaylist, set
             </div>
             {
                 pNameError &&
-                <div className="alert alert-error p-4 mx-4">
+                <div className="alert alert-error p-4 mx-4 my-2">
                     <span className="font-bold">Playlist name already exists!</span>
                 </div>
             }

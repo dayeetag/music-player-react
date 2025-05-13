@@ -18,22 +18,57 @@ function App() {
     }, [playlists]);
 
     return (
-
-        <div className='h-screen w-screen flex'>
-            <div className="w-1/4 h-full flex flex-col pt-4 bg-black">
-                <div>
-                    <button className={`${showAllSongs ? 'bg-zinc-950' : 'bg-black'} p-4 rounded-t-lg font-bold cursor-pointer`} onClick={() => setShowAllSongs(true)}>All Songs</button>
-                    <button className={`${showAllSongs ? 'bg-black' : 'bg-zinc-950'} p-4 rounded-t-lg font-bold cursor-pointer`} onClick={() => setShowAllSongs(false)}>Playlists</button>
-                </div>
-                {showAllSongs ?
-                    <AllSongs currentSong={currentSong} setCurrentSong={setCurrentSong} /> :
-                    <Playlists playlists={playlists} setPlaylists={setPlaylists} activePlaylist={activePlaylist} setActivePlaylist={setActivePlaylist} setCurrentSong={setCurrentSong}/>
-                }
+        <div className='h-screen w-screen flex flex-col overflow-hidden'>
+            {/* Header */}
+            <div>
+                <p className='font-bold text-3xl md:text-4xl p-4 md:p-8 text-center md:text-left'>
+                    Music Player 🎵
+                </p>
             </div>
 
-            <div className="w-3/4 h-screen flex flex-col">
-                <p className='font-bold text-4xl pt-8 pl-8'>Music Player 🎵</p>
-                <SongPlayer currentSong={currentSong} playlists={playlists} setPlaylists={setPlaylists} activePlaylist={activePlaylist} setActivePlaylist={setActivePlaylist}/>
+            {/* Content Area */}
+            <div className='flex flex-col md:flex-row flex-1 overflow-hidden'>
+                {/* Sidebar */}
+                <div className="w-full md:w-1/4 h-1/3 md:h-full flex flex-col pt-4 bg-black overflow-y-auto">
+                    <div className="flex">
+                        <button
+                            className={`flex-1 ${showAllSongs ? 'bg-zinc-950 rounded-t-md' : 'bg-black'} p-4 font-bold cursor-pointer`}
+                            onClick={() => setShowAllSongs(true)}
+                        >
+                            All Songs
+                        </button>
+                        <button
+                            className={`flex-1 ${showAllSongs ? 'bg-black' : 'bg-zinc-950  rounded-t-md'} p-4 font-bold cursor-pointer`}
+                            onClick={() => setShowAllSongs(false)}
+                        >
+                            Playlists
+                        </button>
+                    </div>
+                    <div className="flex-1 overflow-y-auto">
+                        {showAllSongs ? (
+                            <AllSongs currentSong={currentSong} setCurrentSong={setCurrentSong} />
+                        ) : (
+                            <Playlists
+                                playlists={playlists}
+                                setPlaylists={setPlaylists}
+                                activePlaylist={activePlaylist}
+                                setActivePlaylist={setActivePlaylist}
+                                setCurrentSong={setCurrentSong}
+                            />
+                        )}
+                    </div>
+                </div>
+
+                {/* Main Player Panel */}
+                <div className="flex-1 w-full md:w-3/4 flex flex-col overflow-y-auto">
+                    <SongPlayer
+                        currentSong={currentSong}
+                        playlists={playlists}
+                        setPlaylists={setPlaylists}
+                        activePlaylist={activePlaylist}
+                        setActivePlaylist={setActivePlaylist}
+                    />
+                </div>
             </div>
         </div>
     )
