@@ -121,7 +121,7 @@ export default function SongPlayer({ currentSong, playlists, setPlaylists, activ
                                         <button className="btn btn-success" onClick={handleSave}>
                                             Save
                                         </button>
-                                        <button className="btn" onClick={() => {setShowModal(false); setPNameError(false);setNewPlaylistName("");setSelectedPlaylistOption("");}}>
+                                        <button className="btn" onClick={() => { setShowModal(false); setPNameError(false); setNewPlaylistName(""); setSelectedPlaylistOption(""); }}>
                                             Close
                                         </button>
                                     </div>

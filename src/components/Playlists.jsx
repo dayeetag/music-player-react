@@ -74,7 +74,7 @@ export default function Playlists({ playlists, setPlaylists, activePlaylist, set
                                         activePlaylist.songs.map(s => {
                                             return (
                                                 <li className="flex justify-between px-8 py-2" key={s.id}>
-                                                    <span onClick={()=>setCurrentSong(s.songInfo)} className="cursor-pointer">{s.songInfo.title}</span>
+                                                    <span onClick={() => setCurrentSong(s.songInfo)} className="cursor-pointer">{s.songInfo.title}</span>
                                                     <RemoveCircleOutlineIcon sx={{ color: "red", cursor: "pointer" }} onClick={() => handleDeleteSong(s.id, p.name)} />
                                                 </li>
                                             )
